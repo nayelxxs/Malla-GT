@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Curricular Interactiva</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+    table { margin: auto; border-collapse: collapse; width: 80%; }
+    th, td { border: 1px solid #aaa; padding: 12px; }
+    td:hover { background-color: #f0f8ff; cursor: pointer; }
+    .info { display: none; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Malla Curricular Interactiva</h1>
+  <table>
+    <tr>
+      <th>Ciclo</th>
+      <th>Curso</th>
+    </tr>
+    <tr onclick="mostrarInfo('info1')">
+      <td>1</td>
+      <td>Matemática Básica</td>
+    </tr>
+    <tr onclick="mostrarInfo('info2')">
+      <td>1</td>
+      <td>Comunicación</td>
+    </tr>
+  </table>
+
+  <div id="info1" class="info">📘 Este curso abarca aritmética, álgebra y razonamiento matemático.</div>
+  <div id="info2" class="info">📘 Este curso desarrolla habilidades de lectura, escritura y expresión oral.</div>
+
+  <script>
+    function mostrarInfo(id) {
+      document.querySelectorAll('.info').forEach(el => el.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
